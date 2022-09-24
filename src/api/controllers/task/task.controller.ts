@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { TaskService } from './service/task/task.service';
+import { TaskService } from './service/task.service';
 
 @Controller('task')
 export class TaskController {
