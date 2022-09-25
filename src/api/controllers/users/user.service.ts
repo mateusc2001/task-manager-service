@@ -10,4 +10,8 @@ export class UserService {
     async create(newUser: UserModel): Promise<UserModel> {
         return this.userRepo.create(newUser);
     }
+    
+    async findByUserName(username: string): Promise<UserModel> {
+        return this.userRepo.findByUsername(username);
+    }
 }
