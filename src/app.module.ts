@@ -6,8 +6,11 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './api/controllers/users/user.module';
 import { AuthModule } from './api/auth/auth.module';
 import { AuthService } from './api/auth/auth.service';
-import { APP_GUARD } from '@nestjs/core';
+import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './api/auth/guards/jwt-auth.guard';
+import { HttpExceptionFilter } from './api/handlers/http-exception.filter';
+import { MongoExceptionFilter } from './api/handlers/mongo-exception.filter';
+// import { MongoExceptionFilter } from './api/handlers/mongo-exception.filter';
 
 @Module({
   imports: [
@@ -22,6 +25,14 @@ import { JwtAuthGuard } from './api/auth/guards/jwt-auth.guard';
     {
       provide: APP_GUARD,
       useClass: JwtAuthGuard,
+    },
+    {
+      provide: APP_FILTER,
+      useClass: HttpExceptionFilter
+    },
+    {
+      provide: APP_FILTER,
+      useClass: MongoExceptionFilter
     }
   ],
 })
