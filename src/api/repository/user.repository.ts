@@ -12,7 +12,16 @@ export class UserRepository {
     async create(newUser: UserModel): Promise<any> {
         return this.userModel.create(newUser);
     }
+    
     async findByUsername(username: string): Promise<any> {
         return this.userModel.findOne({ username: username });
+    }
+
+    async findAll(): Promise<any> {
+        return this.userModel.find();
+    }
+
+    async findById(id: string): Promise<any> {
+        return this.userModel.findById(id);
     }
 }

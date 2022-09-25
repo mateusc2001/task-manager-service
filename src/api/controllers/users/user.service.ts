@@ -14,4 +14,12 @@ export class UserService {
     async findByUserName(username: string): Promise<UserModel> {
         return this.userRepo.findByUsername(username);
     }
+
+    async findAll(): Promise<UserModel> {
+        return this.userRepo.findAll();
+    }
+
+    async findById(id: string): Promise<UserModel> {
+        return this.userRepo.findById(id);
+    }
 }
