@@ -19,8 +19,9 @@ export class MongoExceptionFilter implements ExceptionFilter {
                         statusCode: status,
                         timestamp: new Date().toISOString(),
                         path: request.url,
-                        message: 'A chave ${username} já existe no banco de dados.'
+                        message: `A chave de usuário ${exception['keyValue'].username} já existe no banco de dados.`
                     }).send();
+                break;
             default:
                 response
                     .status(status)
