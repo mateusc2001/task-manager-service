@@ -16,4 +16,12 @@ export class TaskService {
     async findAll(): Promise<any> {
         return await this.taskModel.find();
     }
+
+    async update(id: string, updatedTask: any): Promise<any> {
+        return await this.taskModel.updateOne({ _id: id }, updatedTask);
+    }
+
+    async delete(id: string): Promise<any> {
+        return await this.taskModel.deleteOne({ _id: id });
+    }
 }

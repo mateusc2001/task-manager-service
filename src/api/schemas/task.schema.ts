@@ -10,6 +10,9 @@ export class Task {
 
     @Prop({ required: false, schema: [String] })
     tags: string[];
+
+    @Prop({ required: false, default: false })
+    done: boolean;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);
