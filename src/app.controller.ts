@@ -21,4 +21,10 @@ export class AppController {
     return req.user;
   }
 
+  @Public()
+  @Get('testedocker')
+  async testedocker(@Request() req) {
+    return 'Oláasdad';
+  }
+
 }

@@ -14,7 +14,7 @@ import { MongoExceptionFilter } from './api/handlers/mongo-exception.filter';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://mateus:1908@cluster0.f0bostk.mongodb.net/task_manager_db?retryWrites=true&w=majority'),
+    MongooseModule.forRoot('mongodb+srv://mateus:1908@cluster0.f0bostk.mongodb.net/task_manager_db_tst?retryWrites=true&w=majority'),
     TaskModule,
     UserModule,
     AuthModule

@@ -24,4 +24,8 @@ export class UserRepository {
     async findById(id: string): Promise<any> {
         return this.userModel.findById(id);
     }
+
+    async delete(id: string): Promise<any> {
+        return this.userModel.findByIdAndDelete(id);
+    }
 }

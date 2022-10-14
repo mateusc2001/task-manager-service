@@ -22,4 +22,8 @@ export class UserService {
     async findById(id: string): Promise<UserModel> {
         return this.userRepo.findById(id);
     }
+
+    async delete(id: string): Promise<UserModel> {
+        return this.userRepo.delete(id);
+    }
 }
